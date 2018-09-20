@@ -18,12 +18,23 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+
+	[self setupUI];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setupUI {
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setFrame:CGRectMake(30, 100, 150, 40)];
+    [btn setTitle:@"Button点击" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(onBtnTapped) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+}
+
+#pragma mark - Events
+
+- (void)onBtnTapped {
+
 }
 
 @end
